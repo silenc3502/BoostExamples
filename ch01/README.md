@@ -12,7 +12,16 @@ gcc *.cpp -lboost_program_options
 1. main_arg_options  
 2. main_options_config_file  
 3. any_object  
-4.   
+4. variant_union  
+5. explicit_any_sum  
+6. boolean_optional  
+7. array_return  
+8. tuple_multitype_pair  
+9. bind_adapter  
+10. type_index  
+11. rvalue_boost_move  
+12. noncopyable_test  
+13. boost_algorithm_test  
 
 # boost::any type erasure
 ```cpp

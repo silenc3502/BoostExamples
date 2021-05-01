@@ -5,6 +5,9 @@
 #include <algorithm>
 #include <iostream>
 
+// 컴파일시 boost::variant는 거대한 switch문을 만들고
+// switch 조건의 개별 값에 대한 case문에 적합한 값을
+// 가변형 변수의 형식 목록에서 찾기 위한 visitor를 호출한다.
 typedef boost::any cell_t;
 typedef std::vector<cell_t> db_row_t;
 
@@ -18,6 +21,8 @@ db_row_t get_row(const char* /*query*/) {
     return row;
 }
 
+// visitor가 아무것도 변환하지 않는다면
+// boost::static_visitor<>에 템플릿 파라미터를 제공할 수 없다.
 struct db_sum: public std::unary_function<boost::any, void> {
 private:
     double& sum_;
